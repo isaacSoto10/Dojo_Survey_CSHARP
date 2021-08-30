@@ -1,0 +1,55 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index Page</title>
+</head>
+<body>
+    @model Survey
+    <form asp-action="Create" asp-controller="Dojo" method="post" class="contain">
+        <div class="form-group">
+            <span asp-validation-for="Name"></span>
+            <label asp-for="Name">Name</label>
+            <input asp-for="Name">
+        </div>
+        <div class="form-group">
+             <span asp-validation-for="Email"></span>
+            <label asp-for="Email"></label>
+            <input asp-for="Email">
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="Location"></span>
+            <label asp-for="Location"></label>
+            <select asp-for="Location">
+                <option asp-value="Seattle">Seattle</option>
+                <option asp-value="San Jose">San Jose</option>
+                <option asp-value="Newport Beach">Newport Beach</option>
+                <option asp-value="Chicago">Chicago</option>
+                <option asp-value="Dallas">Dallas</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="Language"></span>
+            <label asp-for="Language"></label>
+            <select multiple class="form-control" asp-for="Language">
+                <option asp-value="Python">Python</option>
+                <option asp-value="C#">C#</option>
+                <option asp-value="JavaScript">JavaScript</option>
+                <option asp-value="FORTRAN">FORTRAN</option>
+                <option asp-value="RAL">RAL</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="Comment"></span>
+            <label asp-for="Comment"></label>
+            <textarea asp-for="Comment" rows="3"></textarea>
+        </div>
+        <button class="btn btn-primary">Sumbit</button>
+    </form>
+</body>
+</html>
